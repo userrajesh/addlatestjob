@@ -1,0 +1,29 @@
+/* assets/css/styles.css */
+/* Custom styles for job posting plugin */
+
+.job-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.job-table th,
+.job-table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.job-table th {
+    background-color: #f7f7f7;
+}
+
+/* Blinking "New!" badge style */
+.new-badge {
+    color: red;
+    font-weight: bold;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
