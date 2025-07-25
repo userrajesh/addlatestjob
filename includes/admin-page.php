@@ -27,7 +27,8 @@ function my_crud_admin_page()
             'applylink'             => esc_url_raw($_POST['applylink']),
             'officialNotification'  => esc_url_raw($_POST['officialNotification']),
             'resultlink' => esc_url_raw($_POST['resultlink']),
-            'admitcardlink' => esc_url_raw($_POST['admitcardlink'])
+            'admitcardlink' => esc_url_raw($_POST['admitcardlink']),
+            'what_is_new' => intval($_POST['entry_type']),
         ];
 
         // Using query function
@@ -98,21 +99,23 @@ function my_crud_admin_page()
                     <td><input type="date" name="lastdatetoapply" placeholder="last date"></td>
                     <td><input type="text" name="noofvacancy" placeholder="No. of Vacancy" required></td>
                     <td><input type="url" name="applylink" placeholder="Apply Link" required></td>
-                
+
                 </tr>
                 <tr>
                     <td><input type="url" name="officialNotification" placeholder="Official Notification" required></td>
                     <td><input type="url" name="resultlink" placeholder="Result Link"></td>
                     <td><input type="url" name="admitcardlink" placeholder="Admit Card Link"></td>
                     <td>
-                        <select>
+                        <select name="entry_type" required>
                             <option value="1">New Job Posting</option>
-                            <option value="2">New Result </option>
+                            <option value="2">New Result</option>
                             <option value="3">New Admit Card</option>
                         </select>
                     </td>
                 </tr>
-                <tr> <td colspan="4"><input type="submit" name="add_entry" value="Add Entry" style="width: 100%;"></td></tr>
+                <tr>
+                    <td colspan="4"><input type="submit" name="add_entry" value="Add Entry" style="width: 100%;"></td>
+                </tr>
             </table>
         </form>
 
